@@ -1,34 +1,51 @@
-/*Create a faulty calculator using JavaScript. This faulty calculator does following:
-1.It takes two numbers as inpuit from the user.
-2.It performs wrong operation as follows:
+/*Create a business name generator by combining list of adjectives and shop name and another word. Without using array methods.
 
-+--->-
-*--->+
-- --->/
-/ --->**
+Adjectives:
+Crazy
+Amazing
+Fire
 
-It performs wrong operations 10% of the time.
+Shop name:
+Engine
+Foods
+Garments
 
+Another word:
+Bros
+Limited
+Hub
 */
+let rand=Math.random();
+let first,second, third;
+if(rand<0.33){
+    first='Crazy';
+}else if(rand<0.66){
+    first='Amazing';
 
-
-let random=Math.random();
-let num1=prompt("Enter the first number:");
-let num2=prompt("Enter the second number:");
-let opeartion=prompt("Enter the operation you want to perform (+, -, *, /):");
-
-let obj={
-    "+": "-",
-    "-": "/",
-    "*": "+",
-    "/": "**"
-}
-console.log(random);
-if(random> 0.1){
-    //Performs correct operation
-    alert(`The result is ${eval(`${num1} ${opeartion} ${num2}`)}`)
 }else{
-    opeartion=obj[opeartion];
-    //Performs worng operation
-    alert(`The result is ${eval(`${num1} ${opeartion} ${num2}`)}`)
+    first='Fire';
 }
+//Generating the second word
+rand=Math.random();
+if(rand<0.33){
+    second='Engine'; 
+}
+else if(rand<0.66){
+    second='Foods';
+}
+else{
+    second='Garments';
+}
+//Generating the third word     
+rand=Math.random();
+if(rand<0.33){
+    third='Bros'; 
+}
+else if(rand<0.66){
+    third='Limited';
+}
+else{
+    third='Hub';
+}
+//Printing the business name
+console.log('Your business name is: '+first+' '+second+' '+third);  
